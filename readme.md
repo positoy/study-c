@@ -8,6 +8,15 @@
 - man -a {command} 로 관련된 모든 페이지 조회
 - man -k {command} 로 관련된 모든 manual 조회
 
+## pkg-config
+- gcc {source code} `pkg-config glib-2.0 --cflags --libs`
+- --list-all 설치된 모든 라이브러리 확인
+- --cflags는 include directory 표시
+- --libs는 library 지정
+- \`\` 작은 따옴표는 명령행 실행 전 내부 명령을 실행하여 결과를 치환한다
+
+## 시스템콜
+
 ### 정적링크
 - 컴파일타임에 결합
 - /lib, /usr/lib, /usr/local/lib/.a

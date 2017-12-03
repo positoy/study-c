@@ -8,6 +8,10 @@
 - man -a {command} 로 관련된 모든 페이지 조회
 - man -k {command} 로 관련된 모든 manual 조회
 
+## doxygen
+
+## gdb
+
 ## pkg-config
 - gcc {source code} `pkg-config glib-2.0 --cflags --libs`
 - --list-all 설치된 모든 라이브러리 확인

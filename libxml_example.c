@@ -14,13 +14,39 @@ void print_node(xmlNode* _node, int depth) {
     }
 }
 
-int main()
-{
-    xmlDoc* doc = xmlParseFile("DoxygenLayout.xml");
+void readXML(const char* path) {
+    xmlDoc* doc = xmlParseFile(path);
     xmlNode* root = xmlDocGetRootElement(doc);
     print_node(root,0);
 
     xmlFreeDoc(doc);
     xmlCleanupParser();
+}
+
+void writeXML() {
+    xmlDoc* doc;
+    xmlNode* node;
+    xmlChar* xmlbuff;
+    int bufsize;
+
+    doc = xmlNewDoc("1.0");
+    node = xmlNewNode(NULL, "greeting");
+    xmlNodeSetContent(node, "this is the content");
+    xmlDocSetRootElement(doc, node);
+
+    xmlDocDumpFormatMemory(doc, &xmlbuff, &bufsize, 1);
+    printf("%s", (char*)xmlbuff);
+
+    xmlFree(xmlbuff);
+    xmlFreeDoc(doc);
+
+    return;
+}
+
+int main(int argc, char* argv[])
+{
+    readXML("DoxygenLayout.xml");
+    writeXML();
+
     return 0;
 }

@@ -25,6 +25,9 @@
 - 컴파일타임에 결합
 - /lib, /usr/lib, /usr/local/lib/.a
 - -static 옵션이 없으면 기본적으로 동적링크로 컴파일
+- ar(archive) 유틸리티를 통해서 (object).o 파일들을 합쳐 (archive).a 파일을 만듦
+- ar tv {libxx.a} 로 오브젝트 파일 확인 가능
+- lipo -info {libxx.a} 로 오브젝트 파일의 target architecture 확인가능
 
 ### 동적링크
 1. 동적링크
